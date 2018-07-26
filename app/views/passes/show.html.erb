@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p><label for="pass_location">Name:</label>
+  <%= @pass.name %></p>
+
+<p><label for="pass_location">Location:</label>
+  <%= @pass.location %></p>
+
+<p><label for="pass_login">Login:</label>
+  <%= @pass.login %></p>
+
+<p><label for="pass_password">Password:</label>
+  <%= @pass.password %></p>
+
+<p><label for="pass_location">Additional Information:</label>
+  <%= @pass.additional %></p>
+
+
+
+
+<%= link_to 'Edit', edit_pass_path(@pass) %> |
+<%= link_to 'Back to List', passes_path %>

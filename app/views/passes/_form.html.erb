@@ -1,0 +1,34 @@
+<%= form_with(model: pass, local: true) do |form| %>
+  <% if pass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pass.errors.count, "error") %> prohibited this pass from being saved:</h2>
+
+      <ul>
+      <% pass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!--[form:pass]-->
+
+  <p><label for="pass_name">Name:
+    <%= text_field 'pass', 'name', :size =>  50 %></label></p>
+
+  <p><label for="pass_location">Location:
+    <%= text_field 'pass', 'location', :size =>  50 %></label></p>
+
+  <p><label for="pass_login">Login:
+    <%= text_field 'pass', 'login', :size =>  50 %></label></p>
+
+  <p><label for="pass_password">Password:
+    <%= text_field 'pass', 'password', :size =>  50 %></label></p>
+
+  <p><label for="pass_location">Additional Information:</label>
+    <%= text_area 'pass', 'additional', :rows => 3, :cols => 50 %></p>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

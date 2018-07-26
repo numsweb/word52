@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Passes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Login</th>
+      <th>Password</th>
+      <th>Additional</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @passes.each do |pass| %>
+      <tr>
+        <td><%= pass.name %></td>
+        <td><%= pass.location %></td>
+        <td><%= pass.login%></td>
+        <td><%= pass.password%></td>
+        <td><%= pass.additional%></td>
+        <td><%= link_to 'Show', pass %></td>
+        <td><%= link_to 'Edit', edit_pass_path(pass) %></td>
+        <td><%= link_to 'Destroy', pass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pass', new_pass_path %>
+
